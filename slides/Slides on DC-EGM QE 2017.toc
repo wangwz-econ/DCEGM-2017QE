@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{A Deterministic Model of Consumption-Savings and Retirement}{3}{0}{1}
+\beamer@sectionintoc {2}{DC-EGM Algorithm for the Deterministic Model}{11}{0}{2}
+\beamer@sectionintoc {3}{A Model of Consumption-Savings and Retirement with Income and Taste Shocks}{20}{0}{3}
+\beamer@sectionintoc {4}{DC-EGM Algorithm for a Model with Taste Shocks}{24}{0}{4}
