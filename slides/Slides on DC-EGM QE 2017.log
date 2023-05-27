@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.31)  1 MAY 2023 20:25
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.31)  27 MAY 2023 00:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1202,7 +1202,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
  [6
 
 ]
-Overfull \vbox (3.96127pt too high) detected at line 153
+Overfull \vbox (6.2037pt too high) detected at line 153
  []
 
 [7
@@ -1232,11 +1232,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 ] [13
 
-]
-Overfull \vbox (2.33302pt too high) detected at line 247
- []
-
-[14
+] [14
 
 ] [15
 
@@ -1247,61 +1243,81 @@ Overfull \vbox (2.33302pt too high) detected at line 247
 ] [18
 
 ]
-File: fig2.jpg Graphic file (type bmp)
-<fig2.jpg>
-
-Overfull \hbox (8.52075pt too wide) in paragraph at lines 310--310
-[][] 
- []
-
-
-Overfull \vbox (2.57797pt too high) detected at line 310
+Overfull \vbox (2.83093pt too high) detected at line 309
  []
 
 [19
 
-] [20
+]
+File: fig1.jpg Graphic file (type bmp)
+<fig1.jpg>
+
+Overfull \hbox (5.46521pt too wide) in paragraph at lines 325--325
+[][] 
+ []
+
+
+Overfull \vbox (5.63113pt too high) detected at line 325
+ []
+
+[20
 
 ]
+File: fig2.jpg Graphic file (type bmp)
+<fig2.jpg>
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 344.
+Overfull \hbox (8.52075pt too wide) in paragraph at lines 336--336
+[][] 
+ []
+
+
+Overfull \vbox (2.57797pt too high) detected at line 336
+ []
 
 [21
 
 ] [22
 
-] [23
-
 ]
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 384.
+LaTeX Font Warning: Command \small invalid in math mode on input line 370.
 
-[24
+[23
+
+] [24
 
 ] [25
 
-] [26
+]
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 410.
+
+[26
 
 ] [27
+
+] [28
+
+] [29
 
 ]
 File: algorithm1.jpg Graphic file (type bmp)
 <algorithm1.jpg>
 
-Overfull \vbox (14.53438pt too high) detected at line 413
+Overfull \vbox (14.53438pt too high) detected at line 439
  []
 
-[28
+[30
 
 ]
 File: algorithm2.jpg Graphic file (type bmp)
 <algorithm2.jpg>
- [29
+ [31
 
 ]
 File: algorithm3.jpg Graphic file (type bmp)
 <algorithm3.jpg>
- [30
+ [32
 
 ]
 \tf@nav=\write6
@@ -1318,12 +1334,12 @@ Package rerunfilecheck Info: File `"Slides on DC-EGM QE 2017".out' has not chang
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 25485 strings out of 476930
- 528226 string characters out of 5824092
- 982611 words of memory out of 5000000
- 44897 multiletter control sequences out of 15000+600000
+ 25484 strings out of 476930
+ 527868 string characters out of 5824092
+ 985901 words of memory out of 5000000
+ 44895 multiletter control sequences out of 15000+600000
  443375 words of font info for 146 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 131i,19n,132p,491b,802s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,19n,132p,491b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Slides on DC-EGM QE 2017.pdf (30 pages).
+Output written on Slides on DC-EGM QE 2017.pdf (32 pages).

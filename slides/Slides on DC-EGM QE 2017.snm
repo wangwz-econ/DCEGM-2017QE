@@ -9,9 +9,11 @@
 \beamer@slide {8}{8}
 \beamer@slide {10}{11}
 \beamer@slide {11}{11}
-\beamer@slide {thm2}{18}
-\beamer@slide {12}{21}
-\beamer@slide {13}{21}
-\beamer@slide {14}{21}
-\beamer@slide {15}{22}
-\beamer@slide {17}{24}
+\beamer@slide {thm2}{19}
+\beamer@slide {fig:upperenvelope}{20}
+\beamer@slide {12}{23}
+\beamer@slide {13}{23}
+\beamer@slide {14}{23}
+\beamer@slide {15}{24}
+\beamer@slide {17}{26}
+\beamer@slide {algo:upperenvelope}{32}

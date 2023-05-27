@@ -39,6 +39,7 @@ end
 
 
 % Plot the optimal policy functions
+figure1 = figure(1);
 for t = (T):-1:1
 	plot(policy{t}.w, policy{t}.c)
 	hold all
@@ -47,4 +48,22 @@ set(gca, 'XLim',[0 wealth_max])
 xlabel(gca, 'Wealth')
 ylabel(gca,' Optimal consumption')
 title(gca, 'Optimal consumption rules by age')
+saveas(figure1, "m1 _ policy function by different ages.jpg")
+hold on
 
+
+% wealth0 = 5;
+% path_consum = NaN(T, 1);
+% path_asset  = NaN(T+1, 1);
+% path_asset(1,1) = wealth0;
+% 
+% for t = 1:1:T-1
+%   path_consum(t,1)  = interp1(policy{t}.w, policy{t}.c, path_asset(t,1), 'spline', 'extrap');
+%   path_asset(t+1,1) = interp1(policy{t}.w, R*(y+policy{t}.c), path_asset(t,1), 'spline', 'extrap');
+% end
+% figure2 = figure(2);
+% plot(path_consum)
+% xlabel('Time')
+% ylabel('Consumption Path')
+% title('Consumption Path with Initial Wealth 5')
+% saveas(figure2, "m1 _ consumption path.jpg")

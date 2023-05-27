@@ -14,7 +14,7 @@
 %%% defines highlight command to set text blue
 \definecolor{MyRed}{rgb}{0.4,0,0.1} 
 \definecolor{MyBlue}{rgb}{0,0.2,0.6}
-\newcommand{\highlight}[1]{{\color{blue}{#1}}} 
+\newcommand{\highlight}[1]{{\color{red}{#1}}} 
 	%Instructions: \alert{}, \highlight{}
 	
 %%%%%%% commands defining backup slides so that frame numbering is correct
@@ -42,7 +42,7 @@
 \title{The Endogenous Grid Method for Discrete-Continuous Dynamic Choice Models with (or without) Taste Shocks, Quantitative Economics, 2017}
 \author{Summarized by Wenzhi Wang} 
 \institute{M.Phil. Student at the University of Oxford}
-\date{\today}
+\date{May 5, 2023}
 
 \begin{document}
 	
@@ -82,7 +82,7 @@
 			\label{2}
 			V_t(M)=\max \left\{v_t(M, 0), v_t(M, 1)\right\},
 		\end{equation}
-		where the choice-specific value functions $v_t(M, d), d \in \left\{ 0, 1\right\}$ are given by 
+		where the \highlight{choice-specific value functions}  $v_t(M, d), d \in \left\{ 0, 1\right\}$ are given by 
 		\begin{equation}\small
 			\label{3}
 			 v_t(M, 0)=\max _{0 \leq c \leq M}\left\{\log (c)+\beta W_{t+1}(R(M-c))\right\},
@@ -132,19 +132,19 @@
 		\begin{equation}
 			\label{7}
 			\begin{aligned}
-				c_{T- \tau}(M) = 
+				c_{T- \tau}^w(M) = 
 				\begin{cases}
 					M & \text { if } M \leq y / R \beta, \\
-					{[M+y / R] /(1+\beta)} & \text { if } y / R \beta \leq M \leq\bar{M}_{T-\tau}^{l_1}, \\
-					{\left[M+y\left(1 / R+1 / R^2\right)\right] /\left(1+\beta+\beta^2\right)} &\text { if } \bar{M}_{T-\tau}^{l_1} \leq M \leq \bar{M}_{T-\tau}^{l_2}, \\
+					{[M+y / R] /(1+\beta)} & \text { if } y / R \beta \leq M \leq\overline{M}_{T-\tau}^{l_1}, \\
+					{\left[M+y\left(1 / R+1 / R^2\right)\right] /\left(1+\beta+\beta^2\right)} &\text { if } \overline{M}_{T-\tau}^{l_1} \leq M \leq \overline{M}_{T-\tau}^{l_2}, \\
 					\cdots & \cdots \\
-					{\left[M+y\left(\sum_{i=1}^{\tau-1}R^{-i}\right)\right]\left(\sum_{i=0}^{\tau-1} \beta^i\right)^{-1}} & \text { if } \bar{M}_{T-\tau}^{l_{\tau-2}} \leq M \leq \bar{M}_{T-\tau}^{l_{\tau-1}}, \\
-					{\left[M+y\left(\sum_{i=1}^\tau R^{-i}\right)\right]\left(\sum_{i=0}^\tau \beta^i\right)^{-1}} & \text { if } \bar{M}_{T-\tau}^{l_{\tau-1}} \leq M<\bar{M}_{T-\tau}^{r_{\tau-1}}, \\
-					{\left[M+y\left(\sum_{i=1}^{\tau-1} R^{-i}\right)\right]\left(\sum_{i=0}^\tau \beta^i\right)^{-1}} & \text { if } \bar{M}_{T-\tau}^{r_{\tau-1}} \leq M<\bar{M}_{T-\tau}^{r_{\tau-2}}, \\
+					{\left[M+y\left(\sum_{i=1}^{\tau-1}R^{-i}\right)\right]\left(\sum_{i=0}^{\tau-1} \beta^i\right)^{-1}} & \text { if } \overline{M}_{T-\tau}^{l_{\tau-2}} \leq M \leq \overline{M}_{T-\tau}^{l_{\tau-1}}, \\
+					{\left[M+y\left(\sum_{i=1}^\tau R^{-i}\right)\right]\left(\sum_{i=0}^\tau \beta^i\right)^{-1}} & \text { if } \overline{M}_{T-\tau}^{l_{\tau-1}} \leq M<\overline{M}_{T-\tau}^{r_{\tau-1}}, \\
+					{\left[M+y\left(\sum_{i=1}^{\tau-1} R^{-i}\right)\right]\left(\sum_{i=0}^\tau \beta^i\right)^{-1}} & \text { if } \overline{M}_{T-\tau}^{r_{\tau-1}} \leq M<\overline{M}_{T-\tau}^{r_{\tau-2}}, \\
 					\cdots & \cdots \\
-					{\left[M+y\left(1 / R+1 / R^2\right)\right]\left(\sum_{i=0}^\tau\beta^i\right)^{-1}} & \text { if } \bar{M}_{T-\tau}^{r_2} \leq M<\bar{M}_{T-\tau}^{r_1}, \\
-					{[M+y / R]\left(\sum_{i=0}^\tau \beta^i\right)^{-1}} & \text { if }\bar{M}_{T-\tau}^{r_1} \leq M<\bar{M}_{T-\tau}, \\
-					{M\left(\sum_{i=0}^\tau \beta^i\right)^{-1}} & \text { if } M \geq\bar{M}_{T-\tau} .
+					{\left[M+y\left(1 / R+1 / R^2\right)\right]\left(\sum_{i=0}^\tau\beta^i\right)^{-1}} & \text { if } \overline{M}_{T-\tau}^{r_2} \leq M<\overline{M}_{T-\tau}^{r_1}, \\
+					{[M+y / R]\left(\sum_{i=0}^\tau \beta^i\right)^{-1}} & \text { if }\overline{M}_{T-\tau}^{r_1} \leq M<\overline{M}_{T-\tau}, \\
+					{M\left(\sum_{i=0}^\tau \beta^i\right)^{-1}} & \text { if } M \geq\overline{M}_{T-\tau} .
 				\end{cases}
 			\end{aligned}
 		\end{equation}
@@ -157,11 +157,11 @@
 		
 		The segment boundaries are totally ordered with 
 		\begin{equation}\label{8}
-			\frac{y}{R\beta}<\bar{M}_{T-\tau}^{l_1}<\cdots<\bar{M}_{T-\tau}^{l_{\tau-\tau}}<\bar{M}_{T-\tau}^{r_{T-1}}<\cdots<\bar{M}_{T-\tau}^{r_1}<\bar{M}_{T-\tau},
+			\frac{y}{R\beta}<\overline{M}_{T-\tau}^{l_1}<\cdots<\overline{M}_{T-\tau}^{l_{\tau-\tau}}<\overline{M}_{T-\tau}^{r_{T-1}}<\cdots<\overline{M}_{T-\tau}^{r_1}<\overline{M}_{T-\tau},
 		\end{equation}
-		and the rightmost threshold $\bar{M}_{T-\tau}$, given by
+		and the rightmost threshold $\overline{M}_{T-\tau}$, given by
 		\begin{equation}
-			\bar{M}_{T-\tau}=\frac{(y / R) e^{-K}}{1-e^{-K}}, \quad \text { where } K=\delta\left(\sum_{i=0}^\tau \beta^i\right)^{-1},
+			\overline{M}_{T-\tau}=\frac{(y / R) e^{-K}}{1-e^{-K}}, \quad \text { where } K=\delta\left(\sum_{i=0}^\tau \beta^i\right)^{-1},
 		\end{equation}
 		defines the smallest level of wealth sufficient to induce the consumer to retire at age $t = T - \tau$.
 
@@ -171,8 +171,8 @@
 \begin{frame}{Analytical Optimal Consumption Function}
 
 	\begin{itemize}
-		\item Theorem 1 establishes that the optimal consumption rule of the worker $c_{T-\tau}(M)$ is piecewise linear in $M$, and in period $t$ consists of $2(T-t)+1$ segments. 
-		\item The first segment where $M<y/R\beta$ is the credit constrained region where the agent consumes all available wealth and does not save.
+		\item Theorem 1 establishes that the optimal consumption rule of the worker $c_{T-\tau}(M, 1)$ is piecewise linear in $M$, and in period $t$ consists of $2(T-t)+1$ segments. 
+		\item The first segment where $M<\frac{y}{R\beta}$ is the credit constrained region where the agent consumes all available wealth and does not save.
 		\item The next $T-t-1$ segments are demarcated by the \highlight{liquidity constraint kink points} $\overline{M}_t^{l_j}$ that define values of $M$ at which the consumer is liquidity constrained at age $t+j$ but not at any earlier age. 
 		\item The remaining segments are defined by the secondary kinks, $\overline{M}_t^{r_j}, j=1, \ldots, T-t-1$, and represent the largest level of saving for which it is optimal to retire at age $t+j$ but not at any earlier age.
 		\item Finally, $\overline{M}_t$ is the retirement threshold, which denotes the minimum level of wealth that is required to retire.
@@ -185,7 +185,7 @@
 \begin{frame}{Analytical Value Function $V_t(M)$}
 
 	\begin{itemize}
-		\item Theorem \ref{thm1} implies that the value function $V_t(M)$ is piecewise logarithmic with the same kink points, and can be written as $V_t(M) = B_t \log(c_t (M)) + C_t$ for constants $(B_t, C_t)$ that depend on the region that $M$ falls into.
+		\item Theorem \ref{thm1} implies that the value function $V_t(M)$ is piecewise logarithmic with the same kink points, and can be written as $V_t(M) = B_t \log(c_t (M, d)) + C_t$ for constants $(B_t, C_t)$ that depend on the region that $M$ falls into.
 		\item The function $V_t(M)$ has one primary kink at the optimal retirement threshold $\overline{M}_t$ and $T-t-1$ secondary kinks at $\overline{M}_t^{r_j}, j = 1, \ldots, T-t-1$.
 		\item In addition, there are $T-t$ kinks related to current and future liquidity constraints at $M=\frac{y}{R\beta}$ and $\overline{M}_t^{l_j}, j = 1, \ldots, T-t-1$.
 
@@ -203,15 +203,15 @@
 		\begin{equation}
 			\label{10}
 			\begin{aligned}
-				0 & =u^{\prime}(c)-\beta R u^{\prime}\left(c_{t+1}(R(M-c)+y)\right) \\
-				& =\frac{1}{c}-\frac{\beta R}{c_{t+1}(R(M-c)+y)} .
+				0 & =u^{\prime}(c)-\beta R u^{\prime}\left(c_{t+1}^w(R(M-c)+y)\right) \\
+				& =\frac{1}{c}-\frac{\beta R}{c_{t+1}^w(R(M-c)+y)} .
 			\end{aligned}
 		\end{equation}
-		\item For the worker who decides to retire, the Euler equation is 
+		\item For a worker who decides to retire, the Euler equation is 
 		\begin{equation}
 			\label{11}
 			\begin{aligned}
-				0 & =u^{\prime}(c)-\beta R u^{\prime}\left(c_{t+1}(R(M-c))\right) \\
+				0 & =u^{\prime}(c)-\beta R u^{\prime}\left(c_{t+1}^r(R(M-c))\right) \\
 				& =\frac{1}{c}-\frac{\beta R}{c_{t+1}^r(R(M-c))} .
 				\end{aligned}
 		\end{equation}
@@ -222,7 +222,7 @@
 
 \begin{frame}{The Endogenous Grid Method: General Idea}
 	\begin{itemize}
-		\item Given the period $t+1$ optimal consumption functions $c_{t+1}(M)$ for workers and $c_{t+1}^r(M)$ for retirees, the solutions to these Euler equations \ref{10} and \ref{11} yield the period $t$ choice-specific consumption functions of the worker, $c_t(M, d).$ 
+		\item Given the period $t+1$ optimal consumption functions, i.e., $c_{t+1}^w(M)$ for workers and $c_{t+1}^r(M)$ for retirees, the solutions to these Euler equations \ref{10} and \ref{11} yield the period $t$ choice-specific consumption functions of the worker, $c_t(M, d).$ 
 		\item When an inverse of the marginal utility is closed-form, specifying an exogenous grid over end-of-period saving $A = M-c$ facilitates solving for optimal current consumption in closed form without resorting to iterative numerical methods. 
 	\end{itemize}
 \end{frame}
@@ -235,30 +235,33 @@
 
 \begin{frame}{Retirees: from Period $T$ to $T-1$} \small
 	
-	Consider a retiree in time $T-1$. Obviously, the analytical solution is $c_{T-1}^r(M) = \frac{M}{1+\beta}$. 
+	Consider a retiree in time $T-1$. 
+
 	\begin{itemize}
 		
-		\item In EGM, we first construct an exogenous grid over savings $A= M-c$. Let $\overrightarrow{A} = \{ A_1, \ldots, A_J \}$ denote the exogenous grid over savings. Euler equation \ref{11} can be solved for $c$, $\overline{c}_{T-1}^r (A_{j})$ for each point $A_j$. 
-		\item The solution is easily seen to be $\overline{c}_{T-1}^r (A_{j})= \frac{A_j}{\beta}$, where $A_{j}$ is an element of the exogenous grid $\overrightarrow{A}$.
-		\item Next, we need to get $M_{j, T-1} \in \overrightarrow{M}_{T-1}$, where $\overrightarrow{M}_{T-1}$ is the endogenous grid implied by the exogenous grid over savings $\overrightarrow{A}$. To be specific, we have $$M_{j, T-1} = A_j + \overline{c}_{T-1}^r(A_{j}), $$ now we can map $A_j$ to $M_{j, T-1}$, and therefore transform the function $\overline{c}_{T-1}^r (A_{j})$ to $c_{T-1}^r(M_{j, T-1})$ .
-		\item Thus, at the points of the endogenous grid $\overrightarrow{M}_{t}$, and with linear interpolation, EGM produces an exact solution in the sense that the Euler residuals exactly equal zero.
+		\item In EGM, we first construct an exogenous grid over savings $A= M-c$. Let $\overrightarrow{A} = \{ A_1, \ldots, A_J \}$ denote the exogenous grid over savings. Euler equation \ref{11} can be solved for $c$, $\overline{c}_{T-1}^r (A_{j})$ for each point $A_j$. (The solution is easily seen to be $\overline{c}_{T-1}^r (A_{j})= \frac{A_j}{\beta}$.)
+		\item Next, we need to get $M_{j, T-1} \in \overrightarrow{M}_{T-1}$, where $\overrightarrow{M}_{T-1}$ is the endogenous grid implied by the exogenous grid over savings $\overrightarrow{A}$. To be specific, we have $$M_{j, T-1} = A_j + \overline{c}_{T-1}^r(A_{j}), $$ now we can map $A_j$ to $M_{j, T-1}$, and therefore transform the function $\overline{c}_{T-1}^r(A_{j})$ to $c_{T-1}^r(M_{j, T-1})$ .
+		\item Moreover, at the points of the endogenous grid $\overrightarrow{M}_{t}$, and with linear interpolation, EGM produces an exact solution $c_{T-1}^r(M) = \frac{M}{1+\beta}$. .
 	\end{itemize}
 	
 \end{frame}
 
 \begin{frame}{Workers: from Period $T$ to $T-1$}
+
+	Now consider a worker in period $T-1$. 
+
 	\begin{itemize}\small
 		
-		\item Now consider a worker in period $T-1$. The worker must solve for two consumption functions $c_{T-1}(M, 0)$ and $c_{T-1}(M, 1)$ corresponding to the decision to retire or not.
-		\item Apply ``standard EGM'' to solve the optimal consumption rule of a worker $c_{T-1}(M,d)$ for each of the discrete decisions $d$, using Euler equation \ref{10} or \ref{11}.
+		\item Apply ``standard EGM'' to solve the optimal consumption rule of a worker $c_{T-1}(M,d)$ for each of the discrete decisions $d$, using Euler equation (\ref{10}) or (\ref{11}). 
 		\item Similar to the retiree case, with linear interpolation, this also results in exact solutions.
-		\item To ensure that the credit constraint $c_{T-1} \leq M$ is satisfied, an additional step is needed. 
-		\begin{itemize}
-			\item First, from \ref{10} it follows that invoking the EGM algorithm with zero savings, $A_j=0$, produces an endogenous point $M_{j, T-1} = \frac{y}{R\beta}$. 
-			\item Next, as we show in Theorem \ref{thm2}, it holds that savings as a function of wealth must be nondecreasing, and, therefore, for $M\leq \frac{y}{R\beta}$, the savings must remain zero, that is, $c_{T-1}(M) = M$.
-			\item To add this additional ``credit-constrained'' segment to the optimal consumption function, it is sufficient to add a point $M_{0, T-1} = 0$ to the endogenous grid $\overrightarrow{M}_{T-1}$, and set the corresponding optimal consumption $c_{T-1}(M_{0, T-1}, 1) = M_{0, T-1}=0$. (\highlight{How Linear Interpolation Works?})
-		\end{itemize}
 
+	\end{itemize}
+
+	To ensure that the credit constraint $c_{T-1} \leq M$ is satisfied, we need the following steps. 
+	\begin{itemize}\small
+		\item First, from (\ref{10}) it follows that invoking the EGM algorithm with zero savings, $A_j=0$, produces an endogenous point $M_{j, T-1} = \frac{y}{R\beta}$. 
+		\item Next, as we show in Theorem \ref{thm2}, savings as a function of wealth must be nondecreasing, and, therefore, for $M\leq \frac{y}{R\beta}$, the savings must remain zero, that is, $c_{T-1}(M) = M$.
+		\item Therefore, it is sufficient to add a point $M_{0, T-1} = 0$ to the endogenous grid $\overrightarrow{M}_{T-1}$, and set the corresponding optimal consumption $c_{T-1}(M_{0, T-1}, 1) = M_{0, T-1}=0$. (\highlight{Linear Interpolation Matters!})
 	\end{itemize}
 \end{frame}
 
@@ -266,12 +269,19 @@
 	\begin{itemize}
 		\item Now we have obtained the decision-specific consumption functions $c_t(M_{j,t}^d, d)$ defined over decision-specific endogenous grids $\overrightarrow{M}_t^d = \{M_{1,t}^d, \ldots, M_{J,t}^d\}$.
 		\item What is different about DC-EGM is that we need to compare the choice-specific value functions $v_t(M,0)$ and $v_t(M, 1)$ so as to locate the threshold level of wealth when it becomes optimal to retire, $\overline{M}_t$.
-		\item DC-EGM constructs approximations to $v_t(M,0)$ and $v_t(M, 1)$ over the respective endogenous grids $\overrightarrow{M}_t^0$ and $\overrightarrow{M}_t^1$ alongside the calculation of the optimal consumption functions $c_t(M, 0)$ and $c_t(M, 1)$ by substituting the latter into the Bellman equations \ref{3} and \ref{4}. 
-		\item Then, using the decision-specific value functions, we then find the optimal retirement threshold $\overline{M}_t$ by finding the point of intersection of the two decision-specific value functions, $v_t(M,0) = v_t(M, 1)$.
-		\item The overall value function for the worker $V_t(M)$ is then computed as an \highlight{upper envelope} of the two choice-specific value functions $v_t(M, d)$, each defined over the endogenous grid $\overrightarrow{M}_t^d$.
-		%\item Similarly, the overall consumption function of the worker $c_{T-1}(M)$ is combined from choice-specific consumption functions $c_{T-1}(M,1)$ and $c_{T-1}(M,0)$ depending on whether the level of wealth $M$ is below or above the primary kink point $\overline{M}_{T-1}$, fully in line with formula \ref{7} of Theorem \ref{thm1} for $\tau=1$.
+
 	\end{itemize}
 \end{frame}
+
+\begin{frame}{Difference in DC-EGM from Standard EGM}\small
+	\begin{itemize}
+		\item DC-EGM constructs approximations to $v_t(M,0)$ and $v_t(M, 1)$ over the respective endogenous grids $\overrightarrow{M}_t^0$ and $\overrightarrow{M}_t^1$ alongside the calculation of the optimal consumption functions $c_t(M, 0)$ and $c_t(M, 1)$ by substituting the latter into the Bellman equations (\ref{3}) and (\ref{4}). 
+		\item Then, using the decision-specific value functions, we then find the optimal retirement threshold $\overline{M}_t$ by finding the point of intersection of the two decision-specific value functions, $v_t(M,0) = v_t(M, 1)$.
+		\item The overall value function for the worker $V_t(M)$ is then computed as an \highlight{upper envelope} of the two choice-specific value functions $v_t(M, d)$, each defined over the endogenous grid $\overrightarrow{M}_t^d$.
+		\item Similarly, the \highlight{optimal consumption function} of the worker $c_{T-1}^w(M)$ is combined from choice-specific consumption functions $c_{T-1}(M,1)$ and $c_{T-1}(M,0)$ depending on whether the level of wealth $M$ is below or above the primary kink point $\overline{M}_{T-1}$, fully in line with formula \ref{7} of Theorem \ref{thm1} for $\tau=1$.
+	\end{itemize}
+\end{frame}
+
 
 
 \begin{frame}{Difficulties in Period $T-2$}
@@ -279,8 +289,8 @@
 		\item Complication: the \highlight{emergence of secondary kinks} due to \highlight{multiple local optima} for $c$ in the Bellman equation \ref{4}.
 		\item Recall that $V_t(M)$ is the maximum of decision-specific value functions and is not globally concave. In particular, $V_{T-1}(M)$ has a nonconcave region near $\overline{M}_{T-1}$, where the decision-specific value functions $v_{T-1}(M,0)$ and $v_{T-1}(M,1)$ cross.
 		\item This implies that at time $T-2$ when we search over $c$ to maximize $\log(c) + \beta V_{T-1}(R(M-c)+y)$ in equation \ref{4}, for some level of $M$ there will be multiple local optima for $c$ with corresponding multiple solutions to the Euler equations.
-		\item Thus, DC-EGM must also take care to select the \highlight{correct solution to the Euler equation} corresponding to the globally optimal consumption value.
-		\item This is achieved by the calculation of the \highlight{upper envelope} over the overlapping segments of the decision-specific value functions that are produced from different solutions. The \highlight{dominated grid points} are then eliminated from the endogenous grid in a way below.
+		\item Thus, DC-EGM must also take care to select the correct solution to the Euler equation corresponding to the globally optimal consumption value.
+		\item \highlight{This is achieved by the calculation of the upper envelope over the overlapping segments of the decision-specific value functions that are produced from different solutions. The dominated grid points are then eliminated from the endogenous grid in a way below.}
 		
 	\end{itemize}
 \end{frame}
@@ -291,10 +301,27 @@
 		Theorem 2 (Monotonicity of the Saving Function). Let $A_t(M, d) = M - c_t(M, d)$ denote the savings function implied by the optimal consumption function $c_t(M, d)$. If $u(c)$ is a concave function, then for each $t \in \{1, \ldots, T\}$ and each discrete choice $d \in \{0,1\}$ the optimal saving function $A_t(M, d) = M - c_t(M, d)$ is monotone nondecreasing in $M$.
 	\end{theorem}
 	\begin{itemize}
-		\item Now, we can illustrate the key second step of DC-EGM--refinement of the endogenous grid to discard the suboptimal points produced by the EGM step.
-		\item This is achieved by constructing the upper envelope over the segments of the discrete choice-specific value function correspondence in the region of $M$ where multiple solutions were detected. The detection itself relied on checking for monotonicity of the endogenous grid.
-		\item With the refined monotonic endogenous grid $\overline{M}_{T-2}^{*1}$ constructed from the upper envelope of the interpolated value functions, we obtain a close approximation to the correct optimal consumption rule $c_{T-1}(M, 1)$.
+		\item Key second step of DC-EGM: refinement of the endogenous grid to discard the suboptimal points produced by the EGM step.
+		\item Construct the upper envelope over the segments of the discrete choice-specific value function correspondence in the region of $M$ where multiple solutions were detected. The detection itself relied on checking for monotonicity of the endogenous grid.
+		\item With the refined monotonic endogenous grid $\overline{M}_{T-2}^{*1}$ constructed from the upper envelope of the interpolated value functions, we obtain a close approximation to the correct optimal consumption rule $c_{T-1}^w(M)$.
+		\item See Figure 1 in the original paper for more details.
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Graphical Illustration of the Selection Process}
+	\label{fig:upperenvelope}
+	\begin{figure}[htbp!]
+		\begin{minipage}{0.55\linewidth}
+			\includegraphics[scale=0.5]{fig1.jpg}
+		\end{minipage}
+		\begin{minipage}{0.4\linewidth}
+			\begin{itemize} \small
+				\item The most important step is in panel (b) and (d).
+				\item We need to check monotonicity of the endogenous wealth grid for each choice and construct the upper envelope for choice-specific value function in certain regions.
+				\item Link to algorithm \hyperlink{algo:upperenvelope}{\beamerreturnbutton{Upper Envelope}}. 
+			\end{itemize}
+		\end{minipage}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Graphical Illustration of the Nonmonotonicity and Selection Process}
@@ -303,10 +330,9 @@
 			\includegraphics[scale=0.55]{fig2.jpg}
 		\end{minipage}
 		\begin{minipage}{0.4\linewidth}
-			$R = 1, \beta = 0.98$, \\ $y = 20, T = 20$. \\ Both the VFI and DC-EGM solutions were generated using 2000 points in the $M$-grid.
+			$R = 1, \beta = 0.98$, \\ $y = 20, T = 20$. \\ \highlight{MATLAB Implementation!!!}
 		\end{minipage}
 	\end{figure}
-	
 \end{frame}
 
 \section[Stochastic Model]{A Model of Consumption-Savings and Retirement with Income and Taste Shocks}
@@ -419,9 +445,11 @@
 \end{frame}
 
 \begin{frame}{Pseudo Codes for EGM Algorithm: Upper Envelope}
+	\label{algo:upperenvelope}
 	\begin{figure}
 		\includegraphics[scale=0.55]{algorithm3.jpg}
 	\end{figure}
+	\hyperlink{fig:upperenvelope}{\beamerreturnbutton{Figure: Upper Envelope}}
 \end{frame}
 
 
