@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.31)  27 MAY 2023 00:09
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.31)  27 MAY 2023 08:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1336,7 +1336,7 @@ Package rerunfilecheck Info: File `"Slides on DC-EGM QE 2017".out' has not chang
 Here is how much of TeX's memory you used:
  25484 strings out of 476930
  527868 string characters out of 5824092
- 985901 words of memory out of 5000000
+ 985903 words of memory out of 5000000
  44895 multiletter control sequences out of 15000+600000
  443375 words of font info for 146 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
