@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.31)  27 MAY 2023 08:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.3.31)  29 MAY 2023 10:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1278,46 +1278,59 @@ Overfull \vbox (2.57797pt too high) detected at line 336
 
 ] [22
 
+] [23
+
 ]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 370.
+LaTeX Font Warning: Command \small invalid in math mode on input line 381.
 
-[23
-
-] [24
+[24
 
 ] [25
 
+] [26
+
 ]
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 410.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 420.
 
-[26
+LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
+(Font)              scaled to size 6.32394pt on input line 420.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.25598pt on input line 420.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.25598pt on input line 420.
 
-] [27
+Overfull \hbox (3.19035pt too wide) detected at line 420
+[][][][]
+ []
+
+[27
 
 ] [28
 
 ] [29
 
+] [30
+
 ]
 File: algorithm1.jpg Graphic file (type bmp)
 <algorithm1.jpg>
 
-Overfull \vbox (14.53438pt too high) detected at line 439
+Overfull \vbox (14.53438pt too high) detected at line 449
  []
 
-[30
+[31
 
 ]
 File: algorithm2.jpg Graphic file (type bmp)
 <algorithm2.jpg>
- [31
+ [32
 
 ]
 File: algorithm3.jpg Graphic file (type bmp)
 <algorithm3.jpg>
- [32
+ [33
 
 ]
 \tf@nav=\write6
@@ -1334,12 +1347,12 @@ Package rerunfilecheck Info: File `"Slides on DC-EGM QE 2017".out' has not chang
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 25484 strings out of 476930
- 527868 string characters out of 5824092
- 985903 words of memory out of 5000000
- 44895 multiletter control sequences out of 15000+600000
- 443375 words of font info for 146 fonts, out of 8000000 for 9000
+ 25494 strings out of 476930
+ 528005 string characters out of 5824092
+ 987162 words of memory out of 5000000
+ 44905 multiletter control sequences out of 15000+600000
+ 446707 words of font info for 154 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,19n,132p,491b,804s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Slides on DC-EGM QE 2017.pdf (32 pages).
+Output written on Slides on DC-EGM QE 2017.pdf (33 pages).

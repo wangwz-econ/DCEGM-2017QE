@@ -17,7 +17,7 @@ y = 1;            % wage income
 sigma = 0.25;     % sigma parameter in lognormal distribution
 
 % quadrature notes and weights
-[quadp, quadw]=fun_quadpoints(quadN, 0, 1);  
+[quadp, quadw]=quadpoints(quadN, 0, 1);  
 % prepare quadrature points for calculation of expectations of Normal
 quadstnorm = norminv(quadp, 0, 1);         
 

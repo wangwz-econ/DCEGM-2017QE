@@ -30,10 +30,10 @@ end
 
 methods
 
-  % cls_line %----------------------------------------------
+  % cls_line %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function obj = cls_line(varargin)
     % Initialize the object.
-    % ! x and y must be vectors of the same size. After initialization, obj.x and obj.y are both column vectors.
+    % -- x and y must be vectors of the same size. After initialization, obj.x and obj.y are both column vectors.
     if nargin > 0 
       obj.x = reshape(varargin{1}, [], 1); % reshape x as a column vector
     end
@@ -45,12 +45,12 @@ methods
     end
   end
 
-  % cls_len %----------------------------------------------
+  % cls_len %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function res = cls_len(obj)
     % Number of grid points in this line/function.
     % Also can check the equality of length of obj.x and obj.y.
-    % ! obj can be a scalar or array. 
-    % ! When obj is an array, res is an array of the same size with entry k storing the length of x and y of obj(k).
+    % -- obj can be a scalar or array. 
+    % -- When obj is an array, res is an array of the same size with entry k storing the length of x and y of obj(k).
     res = NaN(numel(obj), 1);
     for k = 1:numel(obj)
       res(k) = numel(obj(k).x);
@@ -62,11 +62,11 @@ methods
     res = reshape(res, size(obj));
   end
 
-  % cls_sort %----------------------------------------------
+  % cls_sort %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function res = cls_sort(obj)
     % Sort the obj.x vector to better represent a function.
     % Return the sorted line (another cls_line object or object array), original obj is not modified.
-    % ! obj can be a scalar or array.
+    % -- obj can be a scalar or array.
     for i = 1:numel(obj)
       [res_x, sort_index] = sort(obj(i).x);
       res_y = obj(i).y(sort_index);
@@ -75,17 +75,17 @@ methods
     res = reshape(res, size(obj));
   end % end the cls_sort function
 
-  % cls_interp %----------------------------------------------
+  % cls_interp %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function [res, extrapflag] = cls_interp(obj, vx)
     % Compute the linearly interploated/extrapolated values in given points .
-    % ! vx is a row or column vector.
-    % ! If obj is a cls_line scalar:
-    % !   res is a row vector of the same size of vx, storing the interpolated/extrapolated values of vx.
-    % !   extrapflag is a logical row vector of the same size of vx (1 means this value is extrapolated).
-    % ! If obj is a cls_line array:
-    % !   res is a cell of the same size as the obj array, with entry k containing the
-    % !     interploated/extrapolated values (as a row vector) for the corresponding function obj(k).
-    % TODO obj(k).x must only unique points but need not to be sorted.
+    % -- vx is a row or column vector.
+    % -- If obj is a cls_line scalar:
+    % --   res is a row vector of the same size of vx, storing the interpolated/extrapolated values of vx.
+    % --   extrapflag is a logical row vector of the same size of vx (1 means this value is extrapolated).
+    % -- If obj is a cls_line array:
+    % --   res is a cell of the same size as the obj array, with entry k containing the
+    % --     interploated/extrapolated values (as a row vector) for the corresponding function obj(k).
+    % ! obj(k).x must only unique points but need not to be sorted.
     vx = reshape(vx, 1, []);
     if numel(obj)==1
       try
@@ -114,17 +114,17 @@ methods
     end % end the if-else statement to check the number of elements in the obj input
   end % end the cls_interp function
 
-  % cls_grow %----------------------------------------------
+  % cls_grow %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function res = cls_grow(obj, in2, front)
     % Add another line segement in2 to the end (or the front) of ojb.
-    % ! If obj is a cls_line scalar:
-    % !   in2 is also a cls_line scalar.
-    % !   If front = false (default), then add in2 to the end of obj; otherwise, to the front of obj.
-    % !   Return a cls_line object scalar res.
-    % ! If obj is a cls_line array:
-    % !   in2 is also a cls_line array of the same size of obj.
-    % !   If front = false (default), then add in2 to the end of obj; otherwise, to the front of obj. 
-    % !   Return a cls_line object array res. (use res(index) to access certain lines).
+    % -- If obj is a cls_line scalar:
+    % --   in2 is also a cls_line scalar.
+    % --   If front = false (default), then add in2 to the end of obj; otherwise, to the front of obj.
+    % --   Return a cls_line object scalar res.
+    % -- If obj is a cls_line array:
+    % --   in2 is also a cls_line array of the same size of obj.
+    % --   If front = false (default), then add in2 to the end of obj; otherwise, to the front of obj. 
+    % --   Return a cls_line object array res. (use res(index) to access certain lines).
     if nargin<3
       front = false;
     end
@@ -144,13 +144,13 @@ methods
     res = reshape(res, size(obj));
   end % end the cls_grow function
 
-  % cls_insert %----------------------------------------------
+  % cls_insert %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function res = cls_insert(obj, x, y, j)
     % Insert points (x, y) after position j in the current line obj.
-    % ! j=0 means to add the points to the front, j>=obj.len means to add the points to the end.
-    % ! If j is missing, the point is added to the end.
-    % ! x, y can only be vectors (row or column vectors of the same size) or scalars.
-    % ! obj can be a cls_line scalar or array. If it is an array, then insert points (x,y) into each cls_line object.
+    % -- j=0 means to add the points to the front, j>=obj.len means to add the points to the end.
+    % -- If j is missing, the point is added to the end.
+    % -- x, y can only be vectors (row or column vectors of the same size) or scalars.
+    % -- obj can be a cls_line scalar or array. If it is an array, then insert points (x,y) into each cls_line object.
     res = obj;
     if numel(x)>1 % here x and y are two vectors
       mx = numel(x);
@@ -195,11 +195,11 @@ methods
     end % end the overall if-else statement to check whethter obj is an array, x and y are vectors
   end % end the cls_insert function
 
-  % cls_thinout %----------------------------------------------
+  % cls_thinout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function res = cls_thinout(obj, index)
     % Remove the indexed points from obj.
-    % ! index should be a scalar or a vector (row or column vector).
-    % ! obj can be a cls_line object scalar or array. If it is an array, removing the indexed points in all entries.
+    % -- index should be a scalar or a vector (row or column vector).
+    % -- obj can be a cls_line object scalar or array. If it is an array, removing the indexed points in all entries.
     res = obj;
     for k = 1:numel(res)
       ii = intersect(1:numel(res(k).x), index);
@@ -209,13 +209,13 @@ methods
     end
   end % end the cls_thinout function
 
-  % cls_diff %----------------------------------------------
+  % cls_diff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function indx = cls_diff(obj, pl2, significance)
     % Get the indexes of points in obj that are not in pl2.
     % Note: differences in either x or y will both be stored.
-    % ! pl2 should be a cls_line object scalar.
-    % ! obj can be a cls_line object scalar or array.
-    % ! If obj is a cls_line object array, indx is a cell; if obj is a cls_line object scalar, indx is a vector.
+    % -- pl2 should be a cls_line object scalar.
+    % -- obj can be a cls_line object scalar or array.
+    % -- If obj is a cls_line object array, indx is a cell; if obj is a cls_line object scalar, indx is a vector.
     if nargin < 3
       significance = 5; % equality is measured up to 10^-signif
     end
@@ -233,12 +233,12 @@ methods
     end
   end % end the cls_diff function
 
-  % cls_chop %----------------------------------------------
+  % cls_chop %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function [res1, res2] = cls_chop(obj, j, repeat)
     % This function separates the grid into two parts at the index j position.
-    % ! j must be a scalar.
-    % ! obj can be a cls_line object scalar or array. 
-    % ! res1 and res2 are cls_line object arrays of the same size as obj.
+    % -- j must be a scalar.
+    % -- obj can be a cls_line object scalar or array. 
+    % -- res1 and res2 are cls_line object arrays of the same size as obj.
     % If repeat=true, the boundary points are repeated in both resulting cls_line objects, i.e., 
     %   the two parts are 1,..., j and j, ..., end.
     % If repeat=false, the two parts are 1,..., j and j+1, ..., end.
@@ -267,13 +267,13 @@ methods
     end
   end % end the cls_chop function
 
-  % cls_upper_envlp %----------------------------------------------
+  % cls_upper_envlp %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function [res, intersections] = cls_upper_envlp(obj, fullinterval)
     % This function computes the upper envelope over the array of cls_line objects.
-    % ! obj must be a cls_line object column vector of the same length in the sense of obj(k).cls_len!
-    % TODO All entries in obj should be sorted (obj(k).x are unique and increasing), and are treated as sorted.
-    % ! If fullinterval=false, res is a cls_line object containing the upper envelope of only the overlapping segments.
-    % ! If fullinterval=true, res is a cls_line object containing the upper envelope of the whole interval (union of obj(k).x).
+    % -- obj must be a cls_line object column vector of the same length in the sense of obj(k).cls_len!
+    % ! All entries in obj should be sorted (obj(k).x are unique and increasing), and are treated as sorted.
+    % -- If fullinterval=false, res is a cls_line object containing the upper envelope of only the overlapping segments.
+    % -- If fullinterval=true, res is a cls_line object containing the upper envelope of the whole interval (union of obj(k).x).
 
     if numel(obj)==1
       warning('Upper envelope is meant for an array of polylines')
@@ -292,7 +292,7 @@ methods
       pt = union(pt, obj(union_k).x);
     end
     pt = sort(pt);  
-    % ! When obj is a cls_polyline array, ojb.x returns all obj(k).x as vectors of possible different lengths.
+    % -- When obj is a cls_polyline array, ojb.x returns all obj(k).x as vectors of possible different lengths.
 
     % step 2: interpolate all lines on all points recording the extrapolation cases
     [intr, extrflag] = obj.cls_interp(pt); % intr and extrflag are size(obj) by 1 cells, each entry containing a row vector of interpolated values
@@ -378,18 +378,18 @@ methods
     end % end the for loop to go through all points in the pt vector
   end % end the cls_upper_envlp function
 
-  % cls_outer_refinement %----------------------------------------------
+  % cls_outer_refinement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   function [res, indxremoved, newdots] = cls_outer_refinement(obj)
 		% Conduct the endogenous wealth grid refinement as in the paper 'The Endogenous Grid Method for Discrete-Continuous 
     %   Dynamic Choice Models with (or without) Taste Shocks, Quantitative Economics, 2017'.
-    % TODO The first step is to detect the non-monotonic (non-increasing) region in obj.x, 
-    % TODO   and then chop the obj into several pieces, with each piece the x values are monotonic.
-    % TODO The second step is to construct the upper envelope of the lines in different segments using cls_upper_envlp.
-    % TODO The inner process of constructinng upper envelope is actually refinement to obj.x.
-    % ! obj can be cls_line scalar or array. This function is imposed elementwise.
-		% ! res is a cls_line scalar or array after refining obj.
-    % ! indxremoved is a cell or a vector of the same size as obj. Entry k stores indexes of deleted points in obj(k).
-    % ! newdots is a cls_line scalar or array of size as size(obj). Entry k stores new points from line intersections.
+    % ! The first step is to detect the non-monotonic (non-increasing) region in obj.x, 
+    % !   and then chop the obj into several pieces, with each piece the x values are monotonic.
+    % ! The second step is to construct the upper envelope of the lines in different segments using cls_upper_envlp.
+    % ! The inner process of constructinng upper envelope is actually refinement to obj.x.
+    % -- obj can be cls_line scalar or array. This function is imposed elementwise.
+		% -- res is a cls_line scalar or array after refining obj.
+    % -- indxremoved is a cell or a vector of the same size as obj. Entry k stores indexes of deleted points in obj(k).
+    % -- newdots is a cls_line scalar or array of size as size(obj). Entry k stores new points from line intersections.
 
 		for k=1:numel(obj)
 			cur = obj(k);

@@ -347,38 +347,49 @@
 
 \begin{frame}{Income and Taste Shocks}
 
-	For the worker's problem, the Bellman equation is 
-	\begin{equation}
-		\label{12}
-		V_t(M, \varepsilon)=\max \left\{v_t(M, 0)+\sigma_{\varepsilon} \varepsilon(0), v_t(M, 1)+\sigma_{\varepsilon} \varepsilon(1)\right\},
-	\end{equation}
-	where the conditional value function for retirement, $v_t(M,0)$ is still given by \ref{3}. However, the conditional value function for remaining working, $v_t(M,0)$ now becomes
-	\begin{equation}
-		\label{13}
-		v_t(M, 1)=\max _{0 \leq c \leq M}\left\{\log (c)-\delta+\beta \int \overline{V}_{t+1}^{\sigma_{\varepsilon}}(R(M-c)+y \eta) f(d \eta)\right\}.
-	\end{equation}
-	The ex ante (integrated) value function $\overline{V}_{t+1}^{\sigma_{\varepsilon}}(M)$ is 
-	\begin{equation}\small
-		\label{14}
-		\begin{aligned}
-			\overline{V}_{t+1}^{\sigma_{\varepsilon}}(M, 1) & = E_{\varepsilon} \left[ V_{t+1} (M, \varepsilon) \right] \\
-			& = E_{\varepsilon} \left[\max \left\{v_{t+1}(M, 0)+\sigma_{\varepsilon} \varepsilon(0), v_{t+1}(M, 1)+\sigma_{\varepsilon} \varepsilon(1)\right\}\right] \\
-			& =\sigma_{\varepsilon} \log \left(\exp \left\{\frac{v_{t+1}(M, 0)}{\sigma_{\varepsilon}}  \right\}+\exp \left\{\frac{v_{t+1}(M, 1)}{\sigma_{\varepsilon}}\right\}\right) .
-		\end{aligned}
-	\end{equation}
+	\begin{itemize}
+		\item The income process is $$ y_t = y \eta_t, $$where $\log \eta_t \sim \mathcal{N} (-\frac{\sigma_{\eta}^2}{2}, \sigma_{\eta}^2)$.
+		\item The taste shock has an additive separable form of $$\sigma_{\varepsilon} \varepsilon(d_t), $$ where $\varepsilon(d_t)$ are iid standard extreme value distribution.
+		\item For the worker's problem, the Bellman equation is 
+			\begin{equation}
+				\label{12}
+				V_t(M, \varepsilon)=\max \left\{v_t(M, 0)+\sigma_{\varepsilon} \varepsilon(0), v_t(M, 1)+\sigma_{\varepsilon} \varepsilon(1)\right\},
+			\end{equation}
+		where the conditional value function for retirement, $v_t(M,0)$ is still given by (\ref{3}).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Integrated Value Function}
+	\begin{itemize}
+		\item  However, the conditional value function for remaining working, $v_t(M,0)$ now becomes
+			\begin{equation}
+				\label{13}
+				v_t(M, 1)=\max _{0 \leq c \leq M}\left\{\log (c)-\delta+\beta \int E V_{t+1}^{\sigma_{\varepsilon}}(R(M-c)+y \eta) f(d \eta)\right\}.
+			\end{equation}
+		\item The ex ante (integrated) value function $E V_{t+1}^{\sigma_{\varepsilon}}(M)$ is 
+			\begin{equation}\small
+				\label{14}
+				\begin{aligned}
+					E V_{t+1}^{\sigma_{\varepsilon}}(M, 1) & = E_{\varepsilon} \left[ V_{t+1} (M, \varepsilon) \right] \\
+					& = E_{\varepsilon} \left[\max \left\{v_{t+1}(M, 0)+\sigma_{\varepsilon} \varepsilon(0), v_{t+1}(M, 1)+\sigma_{\varepsilon} \varepsilon(1)\right\}\right] \\
+					& =\sigma_{\varepsilon} \log \left(\exp \left\{\frac{v_{t+1}(M, 0)}{\sigma_{\varepsilon}}  \right\}+\exp \left\{\frac{v_{t+1}(M, 1)}{\sigma_{\varepsilon}}\right\}\right) .
+				\end{aligned}
+			\end{equation}
 	The last equality comes from the iid extreme value distribution assumption.
+	\end{itemize}
+	
 \end{frame}
 
 \begin{frame}{Elimination of Primary Kinks}
 	\begin{itemize}
-		\item The immediate effect of introducing extreme value taste shocks is the complete elimination of the \highlight{primary} kinks, because the location of the indifference point in equation \ref{12} is now probabilistic from the point of view of the econometrician.
+		\item The immediate effect of introducing extreme value taste shocks is the complete elimination of the \highlight{primary kinks}, because the location of the indifference point in equation \ref{12} is now probabilistic from the point of view of the econometrician.
 		\item The discrete choice policy function is now given by the logit choice probabilities $P_t(d \mid M)$ that arise due to the distributional assumption for the taste shocks:
 		\begin{equation}
 			\label{15}
 			P_t(d \mid M)=\frac{\exp \left\{v_t(M, d) / \sigma_{\varepsilon}\right\}}{\exp \left\{v_t(M, 1) / \sigma_{\varepsilon}\right\}+\exp \left\{v_t(M, 0) / \sigma_{\varepsilon}\right\}}, \quad d \in\{0,1\} .
 		\end{equation}
 		
-		\item It is worth noting that the problem is still not globally concave in general, so the upper envelope calculation and the elimination of the suboptimal endogenous points is still performed as before.
+		\item \highlight{It is worth noting that the problem is still not globally concave in general, so the upper envelope calculation and the elimination of the suboptimal endogenous points still should be performed as before.} 
 	\end{itemize}
 \end{frame}
 
@@ -394,19 +405,18 @@
 \section[DC-EGM with Taste Shocks]{DC-EGM Algorithm for a Model with Taste Shocks}
 
 \begin{frame}{Smmoothed Euler Equation}
-	\begin{itemize}
-		\item If we continue to assume that retirement is an absorbing state, the problem of the retiree remains the same, and we focus again on the worker's problem.
-		\item The smoothed Euler equation with taste and income shocks derived from equations \ref{12}, \ref{3}, and \ref{13} is 
-		\begin{equation} \footnotesize
-			\label{17}
-			\begin{aligned}
-				0= & u^{\prime}(c)-\beta R \int [u^{\prime}\left(c_{t+1}(R(M-c)+y \eta, 1)\right) P_{t+1}(1 \mid R(M-c)+y \eta)+ \\
-				& u^{\prime}\left(c_{t+1}(R(M-c)+y \eta, 0)\right) P_{t+1}(0 \mid R(M-c)+y \eta)] f(d \eta) \\
-				= & \frac{1}{c}-\beta R \int\left[\frac{P_{t+1}(1 \mid R(M-c)+y \eta)}{c_{t+1}(R(M-c)+y \eta, 1)}+\frac{P_{t+1}(0 \mid R(M-c)+y \eta)}{c_{t+1}(R(M-c)+y \eta, 0)}\right] f(d \eta),
-			\end{aligned}
-		\end{equation}
-		where $P_{t+1}(d \mid M)$ and conditional choice probabilities \ref{15}.
-	\end{itemize}
+
+	 If we continue to assume that retirement is an absorbing state, the problem of the retiree remains the same, and we focus again on the worker's problem.
+	 The smoothed Euler equation with taste and income shocks derived from equations (\ref{12}), (\ref{3}), and (\ref{13}) is 
+	\begin{equation} \scriptsize
+		\label{17}
+		\begin{aligned}
+			u^{\prime}(c)= & \beta R \int \left[u^{\prime}\left(c_{t+1}(R(M-c)+y \eta, 1)\right) P_{t+1}(1 \mid R(M-c)+y \eta)+  u^{\prime}\left(c_{t+1}(R(M-c)+y \eta, 0)\right) P_{t+1}(0 \mid R(M-c)+y \eta)\right] f(d \eta) \\
+			\frac{1}{c}= & \beta R \int\left[\frac{P_{t+1}(1 \mid R(M-c)+y \eta)}{c_{t+1}(R(M-c)+y \eta, 1)}+\frac{P_{t+1}(0 \mid R(M-c)+y \eta)}{c_{t+1}(R(M-c)+y \eta, 0)}\right] f(d \eta),
+		\end{aligned}
+	\end{equation}
+	where $P_{t+1}(d \mid M)$ and conditional choice probabilities \ref{15}.
+
 \end{frame}
 
 \begin{frame}{Solution in Period $T$}

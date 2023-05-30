@@ -2,7 +2,7 @@
 % The Originial Paper is "The Endogenous Grid Method for Discrete-Continuous Dynamic Choice Models 
 % with (or without) Taste Shocks" (QE, 2017)
 
-classdef model2_DCEGM_retirement < handle
+classdef cls_model_AddShocks < handle
 
 properties (Access = public)
   label = "Consumption Model with Retirement";
@@ -35,7 +35,7 @@ end
 methods (Access=public)
   % Definition of the model
 
-  function model = model2_DCEGM_retirement(label,T,gridN,wealth_max,quadN,simN,init,r,beta,sigma,...
+  function model = cls_model_AddShocks(label,T,gridN,wealth_max,quadN,simN,init,r,beta,sigma,...
                                           duw,theta,inc0,inc1,inc2,c_min,lambda) 
     model.label = label;
     model.T = T;
