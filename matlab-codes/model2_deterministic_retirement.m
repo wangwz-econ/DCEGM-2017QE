@@ -118,11 +118,11 @@ for t = T:-1:1
 end % end the for loop that goes through t backward
 
 %% Step 3: Draw the Optimal Consumption Functions in Different Periods
-hold off
+close all
 figure1 = figure(1);
-ax = gca;
 hold on
 grid on
+ax = gca;
 ax.YTick = 0:5:40;
 w18 = policy_w{18}(:,1); c18 =  policy_w{18}(:,2);
 w18 = w18(c18<=40); c18 = c18(c18<=40);
@@ -137,13 +137,13 @@ text(w1(end), c1(end), 't=1', 'VerticalAlignment', 'bottom', 'HorizontalAlignmen
 xlabel("Wealth")
 ylabel("Optimal Consumption")
 title("Figure 2 - Panel a")
-% title("Figure 3 - Panel a")
+title("Figure 3 - Panel a")
 subtitle("Optimal consumption rules in period t = 18, 10, 1")
 saveas(figure1, "m2 _ policy function for workers.jpg")
 saveas(figure1, "FIG2-PanelA _ policy function for workers.jpg")
 % saveas(figure1, "FIG3-PanelA _ policy function for workers.jpg")
 hold off
-
+close all
 %% Step 4: Simulate a Lifecycle Path Given an Initial Wealth Level for R = 1/beta
 % How to smartly store the retirement decision?
 if R > 1 
